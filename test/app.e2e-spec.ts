@@ -21,4 +21,12 @@ describe('AppController (e2e)', () => {
       .expect(200)
       .expect('Hello World!');
   });
+
+  it('/people/direct/20 (GET)', async () => {
+    const res = await request(app.getHttpServer())
+      .get('people/direct/20')
+      .expect(200);
+      console.log(res);
+    expect(res).toBe(3);
+  });
 });

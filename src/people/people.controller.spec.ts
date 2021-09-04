@@ -9,6 +9,8 @@ import { PersonSchema } from './people.model';
 describe('PersonsController', () => {
   let controller: PeopleController;
 
+  const mockPeopleService = {};
+
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [
@@ -16,7 +18,10 @@ describe('PersonsController', () => {
       ],
       controllers: [PeopleController],
       providers: [PeopleService],
-    }).compile();
+    })
+      .overrideProvider(PeopleService)
+      .useValue(mockPeopleService)
+      .compile();
 
     controller = module.get<PeopleController>(PeopleController);
     console.log(controller);

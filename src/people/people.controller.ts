@@ -5,18 +5,18 @@ import { PeopleService } from './people.service';
 export class PeopleController {
   constructor(private readonly personService: PeopleService) {}
   @Get('direct/:id')
-  async directFriends(@Param('id') id: number) {
-    return await this.personService.getDirectFriends(id);
+  directFriends(@Param('id') id: number) {
+    return this.personService.getDirectFriends(id);
   }
 
   @Get('friends/:id')
-  async friendsOfFriends(@Param('id') id: number) {
-    return await this.personService.getFriendsOfFriends(id);
+  friendsOfFriends(@Param('id') id: number) {
+    return this.personService.getFriendsOfFriends(id);
   }
 
   @Get('suggested/:id')
-  async suggestedFriends(@Param('id') id: number) {
-    return await this.personService.getSuggestedFriends(id);
+  suggestedFriends(@Param('id') id: number) {
+    return this.personService.getSuggestedFriends(id);
   }
 
   @Post()

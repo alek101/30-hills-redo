@@ -26,7 +26,7 @@ describe('AppController (e2e)', () => {
     const res = await request(app.getHttpServer())
       .get('people/direct/20')
       .expect(200);
-      console.log(res);
+    console.log(res);
     expect(res).toBe(3);
   });
 });

@@ -23,6 +23,11 @@ describe('Testing all tasks', async () => {
     await app.close();
   });
 
+  it('should return home page', async () => {
+    const res = await chai.request(app.getHttpServer()).get('/');
+    chai.expect(res.text).to.not.equal(null);
+  });
+
   it('GET I task', async () => {
     const adding = await chai
       .request(app.getHttpServer())

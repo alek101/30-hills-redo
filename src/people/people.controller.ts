@@ -42,5 +42,6 @@ export class PeopleController {
   @Post('all')
   async insertFile() {
     await this.personService.setInsertFile();
+    return { done: true };
   }
 }

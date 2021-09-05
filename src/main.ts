@@ -7,6 +7,8 @@ async function bootstrap() {
   app.setGlobalPrefix('api/v1/', {
     exclude: [{ path: '/', method: RequestMethod.GET }],
   });
-  await app.listen(3000);
+  return await app.listen(3000);
 }
-bootstrap();
+
+const appServer = bootstrap();
+export default appServer;

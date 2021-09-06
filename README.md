@@ -49,8 +49,14 @@ $ npm run start:prod
 
 ```bash
 # mocha tests
-# if doesn't work please run npm run start:dev and try again
+# please run npm run start:dev before tests
 $ npm run test
+```
+
+## Docs
+```bash
+# apidoc documentation
+$ npm run docs
 ```
 
 ## Support

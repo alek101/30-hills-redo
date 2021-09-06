@@ -14,13 +14,15 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "test": "mocha tests --timeout 20000 --recursive --exit"
+    "test": "mocha tests --timeout 20000 --recursive --exit",
+    "docs": "node ./src/scripts/createDocs.js"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/mongoose": "^8.0.1",
     "@nestjs/platform-express": "^8.0.0",
+    "apidoc": "^0.29.0",
     "chai-http": "^4.3.0",
     "mongoose": "^5.13.8",
     "reflect-metadata": "^0.1.13",

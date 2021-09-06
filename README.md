@@ -49,7 +49,7 @@ $ npm run start:prod
 
 ```bash
 # mocha tests
-# please run npm run start:dev before tests
+# please run npm run start or npm run start:dev before tests
 $ npm run test
 ```
 

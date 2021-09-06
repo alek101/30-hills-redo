@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   getHello(): string {
-    return `<h1>Documentation</h1> <ul>
+    return `<h1>API endpoints</h1> <ul>
      <li>
         <h4>List of direct friends</h4>
         <p> /api/v1/people/direct/:id </p>

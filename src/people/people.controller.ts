@@ -19,25 +19,25 @@ export class PeopleController {
     return this.personService.getSuggestedFriends(id);
   }
 
-  @Post()
-  async insertPerson(
-    @Body('id') id: number,
-    @Body('firstName') firstName: string,
-    @Body('surname') surname: string,
-    @Body('age') age: number,
-    @Body('gender') gender: string,
-    @Body('friends') friends: number[],
-  ) {
-    const newPerson = await this.personService.setInsertPerson(
-      id,
-      firstName,
-      surname,
-      age,
-      gender,
-      friends,
-    );
-    return newPerson;
-  }
+  // @Post()
+  // async insertPerson(
+  //   @Body('id') id: number,
+  //   @Body('firstName') firstName: string,
+  //   @Body('surname') surname: string,
+  //   @Body('age') age: number,
+  //   @Body('gender') gender: string,
+  //   @Body('friends') friends: number[],
+  // ) {
+  //   const newPerson = await this.personService.setInsertPerson(
+  //     id,
+  //     firstName,
+  //     surname,
+  //     age,
+  //     gender,
+  //     friends,
+  //   );
+  //   return newPerson;
+  // }
 
   @Post('all')
   async insertFile() {

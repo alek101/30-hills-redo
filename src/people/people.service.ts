@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { LeanDocument, Model } from 'mongoose';
 import * as fs from 'fs';
@@ -117,8 +121,14 @@ export class PeopleService {
     age: number,
     gender: string,
     friends: number[],
-  ) {
+  ): Promise<Person> {
     try {
+      const exist = await this.personModel.findOne({ id }).lean();
+      if (exist) {
+        throw new ConflictException(
+          `Person ${firstName} ${surname} with id of ${id} already exist!`,
+        );
+      }
       const person = await new this.personModel({
         id,
         firstName,
@@ -133,7 +143,7 @@ export class PeopleService {
     }
   }
 
-  async setInsertFile() {
+  async setInsertFile(): Promise<void> {
     fs.readFile('./src/resources/data social graph.json', async (err, data) => {
       if (!err) {
         const list = JSON.parse(data.toString());

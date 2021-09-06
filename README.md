@@ -48,14 +48,9 @@ $ npm run start:prod
 ## Test
 
 ```bash
-# unit tests
+# mocha tests
+# if doesn't work please run npm run start:dev and try again
 $ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
 ## Support

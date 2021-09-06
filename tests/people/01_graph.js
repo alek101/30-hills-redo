@@ -5,7 +5,6 @@ const { expect } = require('chai');
 const { AppModule } = require('../../dist/app.module');
 const { Test } = require('@nestjs/testing');
 const chaiHttp = require('chai-http');
-const request = require('supertest');
 
 chai.use(chaiHttp);
 
